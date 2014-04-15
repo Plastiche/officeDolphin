@@ -130,7 +130,7 @@ function Update () {
 		}
 		else if (hit.transform.tag  == "CMForDummies")
 		{
-			toolTipText = "This 'Copy Machines For Dummies book might help...'";
+			toolTipText = "A book titled Copy Machines for Dummies'";
 		}
 		
 		//Interaction with the bookshelf
@@ -178,7 +178,7 @@ function Update () {
 		{
 			if(ItemsToSecratary == false)
 			{
-				toolTipText = "I need to get the documents and the coffee to the secretary";
+				toolTipText = "I need to copy the documents and get coffee to the secretary";
 			}
 			else
 			{
@@ -278,7 +278,7 @@ function Update () {
 		}
 		else if (hit.transform.tag  == "PottedPlant")
 		{
-			toolTipText = "Here is some dirt I can use as a substitute for coffee grounds";
+			toolTipText = "This dirt looks a lot like coffee grounds";
 		}
 		
 		else if (hit.transform.tag  == "WaterCooler" && Input.GetMouseButtonDown(0))

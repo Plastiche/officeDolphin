@@ -1,9 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\AstarPathfindingEditor\Highlight_Object.js">
     <Files>
-      <File FileName="Assets\AstarPathfindingEditor\Highlight_Object.js" Line="338" Column="2" />
-      <File FileName="Assets\AstarPathfindingEditor\Highlight_Object.js" Line="169" Column="79" />
+      <File FileName="Assets\AstarPathfindingEditor\Highlight_Object.js" Line="133" Column="58" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
