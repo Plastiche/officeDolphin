@@ -41,9 +41,21 @@ function Update () {
 	//Raycast to determine which object the mouse is over.
 	if(Physics.Raycast(ray, hit, 100.0) && DayCount == 1)
 	//Day 1
-	{
+	{//Inteaction with the door
+		if(hit.transform.tag  == "Door" && Input.GetMouseButtonDown(0))
+		{
+			textString = "The door to the Boss' office is unlocked... For now...";
+			Application.LoadLevel("BossRoom");
+			return;
+			
+		}
+		else if (hit.transform.tag  == "Door")
+		{
+			toolTipText = "The Boss has a very large door";
+		}
+		
 		//Interaction with the door in the break room
-		if(hit.transform.tag == "Interactable Object" && Input.GetMouseButtonDown(0))
+		else if(hit.transform.tag == "Interactable Object" && Input.GetMouseButtonDown(0))
 		{
 			textString = "You continue to the main lobby...";
 			Application.LoadLevel("%PathfindingTest");
@@ -55,7 +67,7 @@ function Update () {
 		}
 		
 		//Interaction to get into the break room
-		if(hit.transform.tag == "BreakRoomDoor" && Input.GetMouseButtonDown(0))
+		else if(hit.transform.tag == "BreakRoomDoor" && Input.GetMouseButtonDown(0))
 		{
 			textString = "You waddle into the the break room...";
 			Application.LoadLevel("BreakRoom");
@@ -66,17 +78,10 @@ function Update () {
 			toolTipText = "The door to the break room...";
 		}
 		
-		//Inteaction with the door
-		if(hit.transform.tag  == "Door" && Input.GetMouseButtonDown(0))
+		//Look at this WaterCooler
+		else if (hit.transform.tag  == "WaterCooler")
 		{
-			textString = "The door to the Boss' office is unlocked... For now...";
-			Application.LoadLevel("BossRoom");
-			return;
-			
-		}
-		else if (hit.transform.tag  == "Door")
-		{
-			toolTipText = "The Boss has a very large door";
+			toolTipText = "This is a nice Water Cooler. I like this water cooler...";
 		}
 		
 		//Interaction with the copy machine
@@ -136,15 +141,6 @@ function Update () {
 		}
 		
 		//Interactions with the coffee maker
-		else if (hit.transform.tag  == "CoffeeMaker" && Input.GetMouseButtonDown(0))
-		{
-			textString = "The office coffee machine";
-			if(MadeCoffee == false && CopyMachineFixed == true)
-			{
-				//!!!Add Coffee to the inventory!!!
-				MadeCoffee = true;
-			}
-		}
 		else if (hit.transform.tag  == "CoffeeMaker")
 		{
 			if(MadeCoffee == false)
@@ -160,10 +156,19 @@ function Update () {
 				toolTipText = "That's a nice coffee maker";
 			}
 		}
+		else if (hit.transform.tag  == "CoffeeMaker" && Input.GetMouseButtonDown(0))
+		{
+			textString = "The office coffee machine";
+			if(MadeCoffee == false && CopyMachineFixed == true)
+			{
+				//!!!Add Coffee to the inventory!!!
+				MadeCoffee = true;
+			}
+		}
 		
 		else if (hit.transform.tag  == "SecrataryDesk" && Input.GetMouseButtonDown(0))
 		{
-			textString = "Ms. Susie Secratary";
+			textString = "Ms. Susie Secretary";
 			if(MadeCoffee == true && CopiedDocuments == true && ItemsToSecratary == false)
 			{
 				ItemsToSecratary = true;
@@ -173,11 +178,11 @@ function Update () {
 		{
 			if(ItemsToSecratary == false)
 			{
-				toolTipText = "I need to get the documents and the coffee to the secratary";
+				toolTipText = "I need to get the documents and the coffee to the secretary";
 			}
 			else
 			{
-				toolTipText = "The Boss' secratary's desk";
+				toolTipText = "The Boss' secretary's desk";
 			}
 		}
 		
@@ -290,7 +295,7 @@ function Update () {
 		
 		else if (hit.transform.tag  == "SecrataryDesk" && Input.GetMouseButtonDown(0))
 		{
-			textString = "Ms. Susie Secratary";
+			textString = "Ms. Susie Secretary";
 			if(HaveCoffee == true)
 			{
 				//!!!Give coffee to secratary. Boss comes out to tell you how great your coffee is.
@@ -306,7 +311,7 @@ function Update () {
 			}
 			else
 			{
-				toolTipText = "The Boss' secratary's desk";
+				toolTipText = "The Boss' secretary's desk";
 			}
 		}
 		
